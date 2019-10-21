@@ -1,97 +1,42 @@
-<html>
-    <head>
-        <title>Distortion Hover Effect Example</title>
-        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">  
-        <style>
-  body{
-  background:#4F4F4F;
-  color:white;
-  font-family: 'Oswald', sans-serif;
-  display:flex;
-  justify-content:center;
-  padding-top:40px;
-}
-h1{
-  font-size:60px;
-}
-h3{
-  font-weight:400;
-  color:#F2C94C;
-}
-h1,
-h3{
-  margin:0;
-  padding:0;
-}
-img{
-  width:42px;
-  height:39px;
-  margin:0px 20px;
-}
-.ticket{
-  position:relative;
-  height:410px;
-  width:690px;
-  background:black;
-  display:flex;
-  align-items:flex-end;
-  box-shadow: 0px 10px 40px rgba(0,0,0,.4);
-}
-.flight-info{
-  position:relative;
-  z-index:99;
-  padding:30px;
-}
-.flight-locations{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-top:-20px;
-}
-canvas{
-  position:absolute;
-  border-radius:6px;
-  z-index:0;
-}
-.overlay{
-  position:absolute;
-  background:rgba(0, 0, 0, .2);
-  left:0; 
-  right:0;
-  top:0;
-  bottom:0;
-  z-index:1;
-}      
-</style>
-    </head>
-    <body>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.js">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js">
-        </script>
-        <script src="https://cdn.rawgit.com/robin-dela/hover-effect/master/js/hover.min.js">
-        </script>
-        <div class="ticket">
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Distortion Hover Effect | Codrops</title>
+		<meta name="description" content="A little library that can be used for creating WebGL powered distortion hover effects using displacement images." />
+		<meta name="keywords" content="webgl, hover, effect, distortion, displacement, web development, three.js" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+	</head>
+	<body class="loading">
+		<div class="ticket">
   <div class="overlay"></div>
   <div class="flight-info">
     <h3>JUNE 30 2018 12:30PM</h3>
     <div class="flight-locations">
       <h1>LAX</h1>
-      <img src="https://cdn-images-1.medium.com/max/800/1*QFU_XYAKOGJ9nunfqvem1w.png" />
+      <img src="https://cdn-images-1.medium.com/max/800/1*QFU_XYAKOGJ9nunfqvem1w.png"/>
       <h1>JFK</h1>
     </div>
   </div>
 </div>
-<script>
-new hoverEffect({
+		<script src="js/imagesloaded.pkgd.min.js"></script>
+		<script src="js/three.min.js"></script>
+		<script src="js/TweenMax.min.js"></script>
+		<script src="../dist/hover-effect.umd.js"></script>
+		<script>
+			new hoverEffect({
   parent: document.querySelector('.ticket'),
   intensity1: 0.1,
   intensity2: 0.1,
   angle2: Math.PI / 2,
-  image1: 'https://images.unsplash.com/photo-1518824547657-2bb07e2978ba?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9&s=942862481ea16bf420e9014eb479e866',
-  image2: 'https://images.unsplash.com/photo-1494756739853-38af58aa9dd0?ixlib=rb-0.3.5&s=121d4a13a0ca8125ea7bb70eae292900&auto=format&fit=crop&w=1351&q=80',
+  image1: 'https://upload.wikimedia.org/wikipedia/commons/3/30/Echo_Park_Lake_with_Downtown_Los_Angeles_Skyline.jpg',
+  image2: 'https://images.unsplash.com/photo-1440330033336-7dcff4630cef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1342&q=80',
   displacementImage: 'https://cdn.rawgit.com/robin-dela/hover-effect/b6c6fd26/images/stripe1mul.png?raw=true'
 });
-</script>
-    </body>
+		</script>
+	</body>
 </html>
